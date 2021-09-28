@@ -9,7 +9,7 @@ public class Ejemplo04_LecturaDeDatosDelUsuario {
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		lecturaDatosEnteros();
+		lecturaDatosEnterosConError();
 	}
 
 	/**
@@ -21,16 +21,7 @@ public class Ejemplo04_LecturaDeDatosDelUsuario {
 		System.out.println("Palabra o frase introducida: " + str); // Imprime en la consola la palabra introducida
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	/**
 	 * Método lecturaDatosEnteros
@@ -62,6 +53,7 @@ public class Ejemplo04_LecturaDeDatosDelUsuario {
 			System.out.println("Error, no has introducido un número entero");
 		}
 	}
+
 
 	/**
 	 * Método lecturaDatossFlotantes. Hace lo mismo de los otros métodos pero con números flotantes
