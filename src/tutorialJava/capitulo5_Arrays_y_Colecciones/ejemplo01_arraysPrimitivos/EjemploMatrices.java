@@ -27,19 +27,6 @@ public class EjemploMatrices {
 			System.out.println(); // Al finalizar una fila, incluyo un salto de l�nea
 		}
 
-		
-		
-		
-		int matriz2[][] = new int[][] { {1, 2, 3}, 
-										{4, 5, 6}, 
-										{7, 8, 9}};
-
-				
-				
-				
-				
-				
-				
 	}
 
 }

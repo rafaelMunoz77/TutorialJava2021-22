@@ -1,5 +1,7 @@
 package tutorialJava.capitulo5_Arrays_y_Colecciones.ejemplo01_arraysPrimitivos;
 
+import java.util.Iterator;
+
 import tutorialJava.Utils;
 
 public class EjemploArraysPrimitivos {
@@ -9,8 +11,9 @@ public class EjemploArraysPrimitivos {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		primerEjemploArray();
+//		primerEjemploArray();
 //		segundoEjemploArray();
+		tercerEjemploArray();
 	}
 	
 	
@@ -49,4 +52,46 @@ public class EjemploArraysPrimitivos {
 		}
 	}
 
+	
+	/**
+	 * Método que crea e inicializa un array con 100 elementos al azar entre 0 y 100.
+	 * Después calcula la suma, la media, el mayor y el menor de todos.
+	 */
+	public static void tercerEjemploArray() {
+		int suma = 0, mayor, menor;
+		float media;
+		
+		// Declaración del array
+		int array[] = new int[1000000];
+		
+		// Recorro para inicializar el array
+		for (int i = 0; i < array.length; i++) {
+			array[i] = (int) Math.round(Math.random()*100);
+		}
+		
+		// Recorro e imprimo en pantalla
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println("");
+		
+		// Recorro para obtener la suma
+		for (int i = 0; i < array.length; i++) {
+			suma += array[i];
+		}
+		// Calculo la media
+		media = suma / ((float) array.length);
+		
+		// Mayor y menor
+		mayor = array[0];
+		menor = array[0];
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] > mayor) mayor = array[i];
+			if (array[i] < menor) menor = array[i];
+		}
+		
+		// Impresión de resultados
+		System.out.println("suma: " + suma + " - media: " + media +
+				" - mayor: " + mayor + " - menor: " + menor);
+	}
 }

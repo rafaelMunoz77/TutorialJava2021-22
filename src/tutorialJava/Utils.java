@@ -8,6 +8,12 @@ import javax.swing.JOptionPane;
 
 public class Utils {
 
+	public static void main(String args[]) {
+		int num = Utils.obtenerNumeroAzar(10, 20);
+		System.out.println(num);
+	}
+	
+	
 	/**
 	 * Método que obtiene y devuelve un número al azar, entre 0 y 100.
 	 * @return Número generado al azar entre 0 y 100

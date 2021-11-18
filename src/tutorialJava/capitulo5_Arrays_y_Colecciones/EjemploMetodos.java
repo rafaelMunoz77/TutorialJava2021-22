@@ -3,8 +3,8 @@ package tutorialJava.capitulo5_Arrays_y_Colecciones;
 public class EjemploMetodos {
 
 	public static void main(String[] args) {
-		int resultadoDeLaSuma;
-		resultadoDeLaSuma = suma(10, 12);
+		int resultadoDeLaSuma, num1 = 10, num2 = 12;
+		resultadoDeLaSuma = suma(num1, num2);
 		imprimeUnValor(resultadoDeLaSuma);
 	}
 	
