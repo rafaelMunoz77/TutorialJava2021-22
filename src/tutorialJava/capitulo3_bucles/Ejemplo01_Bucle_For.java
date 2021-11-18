@@ -1,6 +1,8 @@
 package tutorialJava.capitulo3_bucles;
 
+import java.awt.JobAttributes;
 import java.util.Date;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -18,18 +20,25 @@ public class Ejemplo01_Bucle_For {
 //		tablaMultiplicar();
 //		mayorDeUnaSerieDeNumeros();
 //		numerosPrimos();
+
+		int limInf = 10, limSup = 100;
 		
-		
-		int suma = 0;
-		int numero = -1;
-		for (;numero != 0;) {
-			numero = Integer.parseInt(JOptionPane.showInputDialog("Introduzca número"));
-			suma += numero;
+		for (int num = limInf; num <= limSup; num++) {
+			boolean esPrimo = true;
+			for (int i = 2; i < num; i++) {
+				if (num % i == 0) {
+					esPrimo = false;
+					break;
+				}
+				
+			}
+
+			if (esPrimo == true) {
+				System.out.println("El número " + num + " es primo");
+			}
 		}
 		
-		System.out.println("Suma: " + suma);
-		
-		
+
 	}
 	
 	
@@ -58,7 +67,7 @@ public class Ejemplo01_Bucle_For {
 	 */
 	public static void cuentaAdelanteConMultiplos () {
 		int limite = 20;
-		int factor = 3;		
+		int factor = 3;	
 		
 		// Una forma de hacer múltiplos
 		for (int i = 0; (i * factor) < limite; i++) {
@@ -111,11 +120,12 @@ public class Ejemplo01_Bucle_For {
 	 * Realizar factorial de un número
 	 */
 	public static void factorial () {
-//		System.out.println ("Introduzca el número cuyo factorial desea conocer: ");
-		int factorial = 6;
+		Scanner sc = new Scanner(System.in);
+		System.out.println ("Introduzca el número cuyo factorial desea conocer: ");
+		int factorial = sc.nextInt();
 		
 		for (int i = factorial-1; i > 1; i--) {
-			factorial = factorial * i;
+			factorial *= i;
 		}
 		
 		System.out.println("El valor del factorial equivale a " + factorial);

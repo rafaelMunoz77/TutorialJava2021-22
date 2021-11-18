@@ -5,14 +5,13 @@ import tutorialJava.Utils;
 public class MetodosSobreArrays {
 
 	public static void main(String[] args) {
-		int array[] = new int[10];
-
-		inicializaArrayAlAzar(array);
-		muestraArray(array);
+		inicializaArrayAlAzar();
 	}
 	
 	
-	public static void inicializaArrayAlAzar (int array[]) {
+	public static void inicializaArrayAlAzar () {
+		int array[] = new int[10];
+		System.out.println("Arra dentro del otro método: " + array);
 		for (int i = 0; i < array.length; i++) {
 			array[i] = Utils.obtenerNumeroAzar();
 		}

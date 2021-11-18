@@ -12,11 +12,11 @@ public class Ejemplo01_Condicionales {
 	 * 
 	 * @param args
 	 */
-	public static void main (String args[]) {
-//		primerEjemploCondicionalSimple();
+	public static void main (String args[]) {		
+		primerEjemploCondicionalSimple();
 //		ejemploCondicionalCompuesto();
 //		ejemploCondicionalAnidado();
-		ejemploCondicionalMultiple();
+//		ejemploCondicionalMultiple();
 //		ejemploOperadorTernario();
 	}
 	
@@ -29,11 +29,9 @@ public class Ejemplo01_Condicionales {
 		System.out.println(numero); // Lo imprimo
 		
 		// Determino si el número está entre unos límites
-		if ((numero > 25 && numero <= 30) || (numero >= 40 && numero < 70)) {
+		if ( (numero >= 10 && numero <= 50) || (numero >= 70 && numero <= 90) ) {
 			System.out.println("Bingooooooooo");
-			System.out.println("Bingooooooooo");
-			System.out.println("Bingooooooooo");
-		}
+			}
 	}
 	
 	
@@ -58,8 +56,19 @@ public class Ejemplo01_Condicionales {
 	 * Los condicionales pueden anidarse unos dentro de otros
 	 */
 	public static void ejemploCondicionalAnidado () {
-		int numero = Utils.obtenerNumeroAzar(); // Pido número al azar
+//		int numero = Utils.obtenerNumeroAzar(); // Pido número al azar
+		int numero = 50;
 		System.out.println("Var número: " + numero);
+		
+		if (numero == 50) {
+			System.out.println("lo que sea");
+		}
+		else {
+			if (numero < 50) {
+				System.out.println("lo que sea");
+			}		
+		}
+		
 		
 		// Con un condicional anidado determino muchas posibles situaciones
 		if (numero > 50) { // El número es mayor de 50
@@ -80,7 +89,7 @@ public class Ejemplo01_Condicionales {
 	 * Ejemplo de switch
 	 */
 	public static void ejemploCondicionalMultiple () {
-		int nota = 11;
+		int nota = 20;
 		
 		// switch decidirá el camino a tomar en función del valor
 		// de la variable
