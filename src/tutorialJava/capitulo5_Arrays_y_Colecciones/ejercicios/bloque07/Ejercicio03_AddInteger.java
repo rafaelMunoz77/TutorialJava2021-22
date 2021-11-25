@@ -7,11 +7,22 @@ public class Ejercicio03_AddInteger {
 		int nuevoArray[];
 		nuevoArray = addInteger(array, 10);
 
+		// Muestro el nuevo array obtenido
+		for (int i = 0; i < nuevoArray.length; i++) {
+			System.out.print(nuevoArray[i] + " ");
+		}
 	}
 
 	
 	
 	public static int[] addInteger (int array[], int numeroParaAgregar) {
-		return new int[10];
+		int nuevoArray[] = new int[array.length + 1];
+		
+		for (int i = 0; i < array.length; i++) {
+			nuevoArray[i] = array[i];
+		}
+		nuevoArray[array.length] = numeroParaAgregar;
+		
+		return nuevoArray;
 	}
 }

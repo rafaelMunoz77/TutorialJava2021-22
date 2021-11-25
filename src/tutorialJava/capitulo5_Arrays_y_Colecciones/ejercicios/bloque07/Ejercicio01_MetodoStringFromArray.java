@@ -15,7 +15,12 @@ public class Ejercicio01_MetodoStringFromArray {
 	 * @return
 	 */
 	public static String stringFromArray (int array[]) {
-		return "";
+		String str = "";
+		
+		for (int i = 0; i < array.length; i++) {
+			str += (char) array[i];
+		}
+		return str;
 	}
 
 }

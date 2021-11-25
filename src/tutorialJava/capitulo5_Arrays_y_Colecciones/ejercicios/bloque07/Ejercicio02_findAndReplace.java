@@ -15,6 +15,10 @@ public class Ejercicio02_findAndReplace {
 	 * @param numeroSustituto
 	 */
 	public static void findAndReplace (int array[], int numeroBuscado, int numeroSustituto) {
-		
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == numeroBuscado) {
+				array[i] = numeroSustituto;
+			}
+		}
 	}
 }
