@@ -18,10 +18,10 @@ public class NumeroEntero {
 		this.valor = valor;
 	}
 
-	@Override
-	public String toString() {
-		return "NumeroEntero [valor=" + valor + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "NumeroEntero [valor=" + valor + "]";
+//	}
 
 	public int getValor() {
 		return valor;

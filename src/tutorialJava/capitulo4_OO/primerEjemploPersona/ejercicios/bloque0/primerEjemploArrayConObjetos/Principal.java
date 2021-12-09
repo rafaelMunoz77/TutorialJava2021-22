@@ -9,6 +9,10 @@ public class Principal {
 		
 		// Muéstralo por pantalla
 		arrayEnteros.mostrar();
+		
+		// Muestro suma
+	
+		System.out.println("La suma vale: " + arrayEnteros.sumaDelArray());
 	}
 
 }

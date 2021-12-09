@@ -30,10 +30,64 @@ public class ArrayEnteros {
 	 */
 	public void mostrar() {
 		for (int i = 0; i < array.length; i++) {
-			System.out.println(array[i].toString());
+			System.out.println(array[i]);
 		}
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public int sumaDelArray() {
+		int suma = 0;
+		for (int i = 0; i < array.length; i++) {
+			suma += array[i].getValor();
+		}
+		return suma;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public float mediaDelArray() {
+		return sumaDelArray() / (float) this.array.length;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int menorDelArray() {
+		int menor = 0;
+		if (this.array.length > 0) {
+			menor = this.array[0].getValor();
+		}
+		for (int i = 1; i < array.length; i++) {
+			if (this.array[i].getValor() < menor) {
+				menor = this.array[i].getValor();
+			}
+		}
+		return menor;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int mayorDelArray() {
+		int mayor = 0;
+		if (this.array.length > 0) {
+			mayor = this.array[0].getValor();
+		}
+		for (int i = 1; i < array.length; i++) {
+			if (this.array[i].getValor() > mayor) {
+				mayor = this.array[i].getValor();
+			}
+		}
+		return mayor;
+	}
 	
 	@Override
 	public String toString() {
