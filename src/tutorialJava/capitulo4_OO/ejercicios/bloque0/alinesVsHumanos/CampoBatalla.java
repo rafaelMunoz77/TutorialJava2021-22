@@ -5,12 +5,40 @@ public class CampoBatalla {
 	private Humano arrayHumanos[] = new Humano[5];
 	private Alien arrayAliens[] = new Alien[5];
 	
-	
+	/**
+	 * 
+	 */
 	public CampoBatalla() {
-		inicializaArrayAliens();
+//		inicializaArrayAliens();
+//		inicializaArrayHumanos();
 		
-		inicializaArrayHumanos();
+		inicializaArrayPersonajes(arrayAliens, true);
+		inicializaArrayPersonajes(arrayHumanos, false);
 	}
+	
+	
+	/**
+	 * 
+	 * @param array
+	 */
+	public void inicializaArrayPersonajes (Personaje array[], boolean esAlien) {
+		// Inicializo el array con Aliens o Humanos
+		for (int i = 0; i < array.length; i++) {
+			System.out.println("Personaje antes de construir: " + array[i]);
+			if (esAlien == true) {
+				array[i] = new Alien();
+			}
+			else {
+				array[i] = new Humano();
+			}
+			System.out.println("Personaje después de construir: " + array[i]);
+		}
+		
+		// Ahora duplico la cantidad de vida del último elemento del array
+		Personaje ultimoElemento = array[array.length - 1];
+		ultimoElemento.setVida(ultimoElemento.getVida() * 2);
+	}
+	
 	
 	/**
 	 * 
