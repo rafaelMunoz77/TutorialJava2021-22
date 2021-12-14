@@ -10,9 +10,9 @@ public class Alien extends Personaje {
 
 	@Override
 	public String toString() {
-		return "Alien [vida=" + vida + ", potencia=" + potencia + ", precision=" + precision + "]";
+		return "Alien";
 	}
-	
+
 
 	
 

@@ -26,14 +26,10 @@ public class Personaje {
 		this.precision = precision;
 	}
 	
-	@Override
-	public String toString() {
-		return "Personaje [vida=" + vida + ", potencia=" + potencia + ", precision=" + precision + "]";
-	}
+
 	
-	
-	
-	
+
+
 	public int getVida() {
 		return vida;
 	}
