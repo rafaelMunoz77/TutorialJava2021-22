@@ -1,6 +1,6 @@
 package tutorialJava.capitulo4_OO.ejercicios.bloque0.alinesVsHumanos;
 
-public class Personaje {
+public abstract class Personaje {
 
 	protected int vida;
 	protected int potencia;
@@ -27,8 +27,10 @@ public class Personaje {
 	}
 	
 
-	
-
+	/**
+	 * 
+	 */
+	public abstract String toString();
 
 	public int getVida() {
 		return vida;

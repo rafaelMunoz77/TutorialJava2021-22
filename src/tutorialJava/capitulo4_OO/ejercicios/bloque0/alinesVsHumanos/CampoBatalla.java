@@ -23,7 +23,17 @@ public class CampoBatalla {
 		// Inicializo el array con Aliens o Humanos
 		for (int i = 0; i < array.length; i++) {
 			if (array instanceof Alien[]) {
-				array[i] = new Alien();
+				array[i] = new Alien() {
+
+					private String nombre = "";
+					
+					@Override
+					public String serializar() {
+						if (this.vida > 0) return "(V:" + this.vida + ")";
+						else return "(V:X)";
+					}
+					
+				};
 			}
 			if (array instanceof Humano[]) {
 				array[i] = new Humano();
@@ -45,6 +55,9 @@ public class CampoBatalla {
 		Humano primerHumanoVivo;
 		
 		do {
+			// Después de los dos disparos
+			muestraCampoBatalla();
+
 			// Disparamos Alien sobre Humano
 			primerAlienVivo = (Alien) localizarPrimerPersonajeVivo(arrayAliens);
 			primerHumanoVivo = (Humano) localizarPrimerPersonajeVivo(arrayHumanos);
@@ -64,7 +77,8 @@ public class CampoBatalla {
 			if (primerAlienVivo == null) {
 				System.out.println("Han ganado los humanos");
 			}
-			
+
+
 		} while (primerHumanoVivo != null && primerAlienVivo != null);
 	}
 	
@@ -79,12 +93,33 @@ public class CampoBatalla {
 			queRecibe.setVida(queRecibe.getVida() - queDispara.getPotencia());
 
 			// Si la vida se pone en negativa la ponemos a 0
-			queRecibe.setVida((queRecibe.getVida() < 0)? 0 : queRecibe.getVida());
-			
-			System.out.println(queDispara.toString() + " ha disparado sobre " + queRecibe.toString() );
+			queRecibe.setVida((queRecibe.getVida() < 0)? 0 : queRecibe.getVida());			
 		}
 	}
 	
+	/**
+	 * 
+	 */
+	public void muestraCampoBatalla() {
+		System.out.print("Aliens: ");
+		for (Alien a : this.arrayAliens) {
+			muestraEnConsolaSerializable(a);
+		}
+		System.out.print("\nHumanos: ");
+		for (Humano h : this.arrayHumanos) {
+			muestraEnConsolaSerializable(h);
+		}
+		System.out.println("\n");
+	}
+	
+	
+	/**
+	 * 
+	 * @param s
+	 */
+	private void muestraEnConsolaSerializable (Serializable s) {
+		System.out.print(s.serializar());
+	}
 	
 	/**
 	 * 
