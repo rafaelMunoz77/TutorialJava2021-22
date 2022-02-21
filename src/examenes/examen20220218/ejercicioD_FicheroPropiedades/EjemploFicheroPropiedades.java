@@ -1,4 +1,4 @@
-package tutorialJava.capitulo6_Recursos;
+package examenes.examen20220218.ejercicioD_FicheroPropiedades;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +28,7 @@ public class EjemploFicheroPropiedades {
 //				propiedades.load(propiedades.getClass().getResourceAsStream("/tutorialJava/capitulo6_Recursos/ejemplo.properties"));
 
 				// Otra forma de leer el fichero de propiedades
-				File file = new File("./src/tutorialJava/capitulo6_Recursos/ejemplo.properties");
+				File file = new File("./src/examenes/examen20220218/ejercicioD_FicheroPropiedades/ejemplo.properties");
 				System.out.println("Fichero encontrado: " + file.exists());
 				propiedades.load(new FileReader(file));
 			
@@ -72,18 +72,24 @@ public class EjemploFicheroPropiedades {
 		return Float.parseFloat(getPropiedades().getProperty(nombrePropiedad));
 	}
 	
+	public static boolean getBooleanProperty (String nombrePropiedad) {
+		return Boolean.parseBoolean(getPropiedades().getProperty(nombrePropiedad));
+	}
+	
 	
 	/**
 	 * 
 	 * @param args
 	 */
 	public static void main (String args[]) {
-		String usuario = EjemploFicheroPropiedades.getProperty("USUARIO");
-		String password = EjemploFicheroPropiedades.getProperty("PASSWORD");
-		int id = EjemploFicheroPropiedades.getIntProperty("ID_USUARIO");
-		
-		System.out.println("Usuario leído del fichero de propiedades: " + usuario);
-		System.out.println("Password leído del fichero de propiedades: " + password);
-		System.out.println("Id de usuario leído del fichero de propiedades: " + id);
+				
+		System.out.println("Ejemplo de String: " + 
+				EjemploFicheroPropiedades.getProperty("USUARIO"));
+		System.out.println("Ejemplo de int: " + 
+				EjemploFicheroPropiedades.getIntProperty("ID_USUARIO"));
+		System.out.println("Ejemplo de float: " + 
+				EjemploFicheroPropiedades.getFloatProperty("PRECIO"));
+		System.out.println("Ejemplo de boolean: " + 
+				EjemploFicheroPropiedades.getBooleanProperty("DATO_BOOLEANO"));
 	}
 }

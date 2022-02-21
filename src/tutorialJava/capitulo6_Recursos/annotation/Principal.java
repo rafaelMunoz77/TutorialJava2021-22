@@ -13,7 +13,7 @@ public class Principal {
         try {
             final Method[] methods = ClaseAnotada.class.getMethods();
             for (final Method method : methods) {
-            	System.out.println("Método: " + method.getName());
+            	System.out.println("MÃ©todo: " + method.getName());
                 invokeMethod(method, claseAnotada);
             }
         } catch (final Exception e) {
@@ -28,7 +28,7 @@ public class Principal {
  
     	Annotation annotations[] = method.getAnnotations();
     	for (Annotation a : annotations) {
-    		System.out.println("\tAnotación: " + a.annotationType().getName());
+    		System.out.println("\tAnotaciï¿½n: " + a.annotationType().getName());
     	}
     	
 /*        final EjemploAnotacionMetodo anotacionEnMetodo = method.getAnnotation(EjemploAnotacionMetodo.class);

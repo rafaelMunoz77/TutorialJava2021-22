@@ -14,7 +14,7 @@ public class EscuchadorNumeros implements NumeroImparIntroducidoListener {
 	@Override
 	public void nuevoNumeroImparIntroducido(NumeroImparIntroducidoEvent event) {
 		System.out.println("Escuchador. Mi id es " + this.identificador + 
-				" y he recidibo evento por el número " + event.numeroIntroducido);
+				" y he recidibo evento por el nÃºmero " + event.numeroIntroducido);
 	}
 
 }
