@@ -50,7 +50,6 @@ public class IntroduccionNumerosUsuario {
 		
 		
 		do {
-			System.out.print("Por favor, introduzca un número: ");
 			numUsuario = Utils.obtenerEntero();
 			
 			if (numUsuario % 2 == 1) { // Es impar

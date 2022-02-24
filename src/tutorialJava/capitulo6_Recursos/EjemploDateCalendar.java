@@ -26,16 +26,20 @@ public class EjemploDateCalendar {
 	 * 
 	 */
 	private static void ejemploFormateoFecha () {
+		Date ahora = new Date();
+		
 		// El formateo de fechas se puede realizar a trav�s de SimpleDateFormat, de una forma sencilla.
 		// Consulta Javadoc SimpleDateFormat para más detalles
 		SimpleDateFormat sdf = new SimpleDateFormat ("EEE, MMM d, ''yy 'at' hh:mm:ss a z");
-		System.out.println("Fecha actual: " + sdf.format(new Date()));
+		System.out.println("Fecha actual: " + sdf.format(ahora));
 		
 		SimpleDateFormat sdf2 = new SimpleDateFormat ("dd/MM/yyyy HH:mm:ss");
+		System.out.println("Fecha actual: " + sdf2.format(ahora));
+			
 		Date fechaParseada = null;
 		// El parseo de fechas debe obligatoriamente ser inspeccionado con un bloque de manejo de excepciones
 		try {
-			fechaParseada = sdf2.parse("19/03/2020 15:33:00");
+			fechaParseada = sdf2.parse("19/03/1977 15:33:00");
 		} catch (ParseException e) {
 			System.out.println ("Error en el parseo de la fecha");
 			e.printStackTrace();
@@ -88,12 +92,13 @@ public class EjemploDateCalendar {
 	 * 
 	 */
 	private static void ejemploLecturaCamposIndividualizadosYLocaleEnImpresion () {
-		Locale locale = Locale.getDefault();
-		//Locale locale = Locale.ITALIAN;
+		//Locale locale = Locale.getDefault();
+		Locale locale = Locale.ITALIAN;
 		Calendar ahora = Calendar.getInstance();
 
 		System.out.println("Año: " + ahora.get(Calendar.YEAR));
 		System.out.println("Mes (0 es Enero): " + ahora.get(Calendar.MONTH));
+		ahora.set(Calendar.MONTH, Calendar.JANUARY);
 		System.out.println("Month (String): " + ahora.getDisplayName(Calendar.MONTH, Calendar.SHORT, locale));
 		System.out.println("D�a del mes: " + ahora.get(Calendar.DAY_OF_MONTH));
 		System.out.println("D�a de la semana (0 es Domingo): " + ahora.get(Calendar.DAY_OF_WEEK));
@@ -194,7 +199,7 @@ public class EjemploDateCalendar {
 	
 	
 	public static void main(String[] args) {
-		ejemploCreacionNormalDate();
+		//ejemploCreacionNormalDate();
 		//ejemploFormateoFecha();
 		//ejemploCalendarBasico();
 		//ejemploCalendarConCamposIndividualizados();
@@ -202,7 +207,7 @@ public class EjemploDateCalendar {
 		//ejemploSumaRestaFechas();
 		//ejemploComparacionFechas();
 		//ejemploDiasEntreDosFechas();
-		//ejemploZonasHorarias();
+		ejemploZonasHorarias();
 	}
 
 }
