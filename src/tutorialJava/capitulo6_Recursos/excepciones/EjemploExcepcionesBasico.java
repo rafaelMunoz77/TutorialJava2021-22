@@ -17,10 +17,12 @@ public class EjemploExcepcionesBasico {
 		try {
 			System.out.println ("Contenido de str: " + str.toLowerCase());
 		}
-		catch (Exception e) {
+		catch(Exception e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
-		
+			
+		System.out.println("Terminando");
 	}
 	
 	

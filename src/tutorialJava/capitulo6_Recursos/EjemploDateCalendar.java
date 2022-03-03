@@ -127,11 +127,11 @@ public class EjemploDateCalendar {
 	private static void ejemploSumaRestaFechas () {
 		Calendar ahora = Calendar.getInstance();
 		ahora.add(Calendar.DAY_OF_MONTH, 20);
-		System.out.println("Ahora m�s 20 d�as : " + ahora.getTime());
+		System.out.println("Ahora más 20 días : " + ahora.getTime());
 
 		ahora = Calendar.getInstance();
 		ahora.add(Calendar.DAY_OF_MONTH, -20);
-		System.out.println("Ahora menos 20 d�as : " + ahora.getTime());
+		System.out.println("Ahora menos 20 días : " + ahora.getTime());
 	}
 	
 	
@@ -199,7 +199,7 @@ public class EjemploDateCalendar {
 	
 	
 	public static void main(String[] args) {
-		//ejemploCreacionNormalDate();
+		ejemploCreacionNormalDate();
 		//ejemploFormateoFecha();
 		//ejemploCalendarBasico();
 		//ejemploCalendarConCamposIndividualizados();
@@ -207,7 +207,7 @@ public class EjemploDateCalendar {
 		//ejemploSumaRestaFechas();
 		//ejemploComparacionFechas();
 		//ejemploDiasEntreDosFechas();
-		ejemploZonasHorarias();
+		//ejemploZonasHorarias();
 	}
 
 }
