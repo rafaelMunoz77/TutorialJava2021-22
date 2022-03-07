@@ -22,19 +22,19 @@ public class Ejemplo02_ConexionMejorada {
 		Statement s = (Statement) conn.createStatement(); 		
 		ResultSet rs = s.executeQuery ("select * from " + tabla);
 		
-		// A trav閟 del objeto ResultSetMetaData obtenemos informaci髇 sobre las caracter韘ticas de los campos que 
-		// posee el conjunto de registros que hemos obtenido con la consulta. Gracias a eso podemos hacer una visualizaci髇
+		// A trav茅s del objeto ResultSetMetaData obtenemos informaci贸n sobre las caracter铆sticas de los campos que 
+		// posee el conjunto de registros que hemos obtenido con la consulta. Gracias a eso podemos hacer una visualizaci贸n
 		// enriquecida del contenido del objeto ResultSet
 		ResultSetMetaData rsmd= rs.getMetaData();			
 
-		// Impresi髇 en pantalla de los tipos de las columnas que forman el resultado del ResultSet
+		// Impresi贸n en pantalla de los tipos de las columnas que forman el resultado del ResultSet
 		System.out.println("\n-------------------------------------------------------------");
 		for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 			System.out.print(rsmd.getColumnTypeName(i) + "\t");
 		}
 		System.out.println("\n-------------------------------------------------------------");
 
-		// Impresi髇 e pantalla de las etiquetas de nombre de las columnas del objeto ResultSet
+		// Impresi贸n en pantalla de las etiquetas de nombre de las columnas del objeto ResultSet
 		System.out.println("\n-------------------------------------------------------------");
 		for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 			System.out.print(rsmd.getColumnLabel(i) + "\t");
@@ -84,7 +84,7 @@ public class Ejemplo02_ConexionMejorada {
 			
 		}
 		catch (SQLException ex) {
-			System.out.println("Error en la ejecuci髇 SQL: " + ex.getMessage());
+			System.out.println("Error en la ejecuci贸n SQL: " + ex.getMessage());
 		}
 	}
 

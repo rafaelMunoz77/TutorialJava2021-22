@@ -14,23 +14,23 @@ public class Ejemplo01_ConexionBasica {
 	 */
 	private static void pruebaConsultaBasica () {
 		try {
-			// A través de la siguiente línea comprobamos si tenemos acceso al driver MySQL, si no fuera así
+			// A travÃ©s de la siguiente lÃ­nea comprobamos si tenemos acceso al driver MySQL, si no fuera asÃ­
 			// no podemos trabajar con esa BBDD.
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		   
 			// Necesitamos obtener un acceso a la BBDD, eso se materializa en un objeto de tipo Connection, al cual
-			// le tenemos que pasar los parámetros de conexión.
-			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/tutorialjavacoches?serverTimezone=UTC","java", "1234");
+			// le tenemos que pasar los parÃ¡metros de conexiÃ³n.
+			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://localhost/tutorialjavacoches?serverTimezone=UTC","java", "Abcdefgh.1");
 		   
 			
 			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			// La ejecución de la consulta se realiza a través del objeto Statement y se recibe en forma de objeto
+			// La ejecuciÃ³n de la consulta se realiza a travÃ©s del objeto Statement y se recibe en forma de objeto
 			// de tipo ResultSet, que puede ser navegado para descubrir todos los registros obtenidos por la consulta
-			ResultSet rs = s.executeQuery ("select * from cochazo");
+			ResultSet rs = s.executeQuery ("select * from coche");
 		   
-			// Navegación del objeto ResultSet
+			// NavegaciÃ³n del objeto ResultSet
 			while (rs.next()) { 
 				System.out.println (rs.getInt("id") + " " + rs.getString (2)+ 
 						" " + rs.getString(3) + " " + rs.getString(4) + 
@@ -46,7 +46,7 @@ public class Ejemplo01_ConexionBasica {
 			ex.printStackTrace();
 		}
 		catch (SQLException ex) {
-			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
+			System.out.println("Error en la ejecuciÃ³n SQL: " + ex.getMessage());
 			ex.printStackTrace();
 		}
 	}
@@ -66,22 +66,22 @@ public class Ejemplo01_ConexionBasica {
 		
 		
 		try {
-			// A través de la siguiente línea comprobamos si tenemos acceso al driver MySQL, si no fuera así
+			// A travÃ©s de la siguiente lÃ­nea comprobamos si tenemos acceso al driver MySQL, si no fuera asÃ­
 			// no podemos trabajar con esa BBDD.
 			Class.forName(driver);
 		   
 			// Necesitamos obtener un acceso a la BBDD, eso se materializa en un objeto de tipo Connection, al cual
-			// le tenemos que pasar los parámetros de conexión.
+			// le tenemos que pasar los parÃ¡metros de conexiÃ³n.
 			Connection conexion = (Connection) DriverManager.getConnection ("jdbc:mysql://" + host + "/" + schema + properties, user, password);
 		   
 			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
 			Statement s = (Statement) conexion.createStatement(); 
 			
-			// La ejecución de la consulta se realiza a través del objeto Statement y se recibe en forma de objeto
+			// La ejecuciÃ³n de la consulta se realiza a travÃ©s del objeto Statement y se recibe en forma de objeto
 			// de tipo ResultSet, que puede ser navegado para descubrir todos los registros obtenidos por la consulta
 			ResultSet rs = s.executeQuery ("select * from coche");
 		   
-			// Navegación del objeto ResultSet
+			// Navegaciï¿½n del objeto ResultSet
 			while (rs.next()) { 
 				System.out.println (rs.getInt (1) + " " + rs.getString (2)+ " " + rs.getString(3)); 
 			}
@@ -95,7 +95,7 @@ public class Ejemplo01_ConexionBasica {
 			System.out.println("Imposible acceder al driver Mysql");
 		}
 		catch (SQLException ex) {
-			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
+			System.out.println("Error en la ejecuciÃ³n SQL: " + ex.getMessage());
 		}
 	}
 	

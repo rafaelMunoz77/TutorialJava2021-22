@@ -207,7 +207,7 @@ public class EjemploDateCalendar {
 		//ejemploSumaRestaFechas();
 		//ejemploComparacionFechas();
 		//ejemploDiasEntreDosFechas();
-		//ejemploZonasHorarias();
+		ejemploZonasHorarias();
 	}
 
 }
