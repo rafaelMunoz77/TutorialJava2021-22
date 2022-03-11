@@ -80,7 +80,7 @@ public class Ejemplo02_ConexionMejorada {
 		try {
 			Connection conn = ConnectionManagerV1.getConexion();
 		   
-			consultarTabla (conn, "venta");
+			consultarTabla (conn, "coche");
 			
 		}
 		catch (SQLException ex) {

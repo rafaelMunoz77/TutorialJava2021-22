@@ -106,7 +106,25 @@ public class Ejemplo01_ConexionBasica {
 	 */
 	public static void main(String[] args) {
 		//pruebaConsultaBasica();
-		pruebaConsultaPorFicheroDePropiedades();
+		//pruebaConsultaPorFicheroDePropiedades();
+		
+		
+//		String str = "";
+//		for (int i = 0; i < 10; i++) {
+//			str += i + "-";
+//		}
+//		System.out.println(str);
+		
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < 10; i++) {
+			sb.append(i + "-");
+		}
+		System.out.println(sb.toString());
+		
+		
+		
+		
+		
 	}
 
 }
