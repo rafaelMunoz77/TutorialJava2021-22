@@ -42,7 +42,7 @@ public class GestionFabricante extends SupertipoGestion {
 		String nuevoCif = "", nuevoNombre = "";
 		
 		System.out.println("Introduce id del fabricante: ");
-		id = sc.nextInt();
+		id = Integer.parseInt(sc.nextLine());
 		
 		try {
 			Statement s = ConnectionManager.getConexion().createStatement();
@@ -51,13 +51,15 @@ public class GestionFabricante extends SupertipoGestion {
 				cif = rs.getString("cif");
 				nombre = rs.getString("nombre");
 			}
-			
-			nuevoCif = JOptionPane.showInputDialog("Cif (" + cif + ") (Intro para mantener): ");
+
+			System.out.println("Cif (" + cif + ") (Intro para mantener): ");
+			nuevoCif = sc.nextLine();
 			if (!nuevoCif.trim().equals("")) {
 				cif = nuevoCif;
 			}
-			
-			nuevoNombre = JOptionPane.showInputDialog("Nombre (" + nombre + ") (Intro para mantener): ");;
+	
+			System.out.println("Nombre (" + nombre + ") (Intro para mantener): ");
+			nuevoNombre = sc.nextLine();
 			if (!nuevoNombre.trim().equals("")) {
 				nombre = nuevoNombre;
 			}
