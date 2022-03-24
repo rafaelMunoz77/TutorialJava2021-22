@@ -3,6 +3,9 @@ package tutorialJava.capitulo7_Acceso_A_Datos.ejercicios.bloque01_CRUD_Fabricant
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -135,6 +138,36 @@ public class GestionFabricante extends SupertipoGestion {
 			ex.printStackTrace();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		SimpleDateFormat sdfEntrada = new SimpleDateFormat("dd/MM/yyyy");
+		String fechaDadaPorUsuario = "19/03/1977";
+		
+		Date date = new Date();
+		try {
+			date = sdfEntrada.parse(fechaDadaPorUsuario);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		SimpleDateFormat sdfSalida = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("fecha en la tabla: " + sdfSalida.format(date));
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
