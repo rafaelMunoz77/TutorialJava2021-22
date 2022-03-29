@@ -30,12 +30,13 @@ public class VentanaPrincipal extends JFrame {
 
 	public static int ANCHO = 800;
 	public static int ALTO = 600;
-	public static String TITULO_APLICACION = "Título de la aplicación";
+	public static String TITULO_APLICACION = "Tï¿½tulo de la aplicaciï¿½n";
 	
 	private CacheImagenes cacheImagenes;
 	public static BufferedImage iconoApp;
 
-	// Establecer la apariencia típica de Windows
+	
+	// Establecer la apariencia tï¿½pica de Windows
 	static {
 		Apariencia.setAparienciasOrdenadas(Apariencia.aparienciasOrdenadas);
 	}
@@ -49,7 +50,7 @@ public class VentanaPrincipal extends JFrame {
 		iconoApp = cacheImagenes.getImagen("nave.gif");
 		this.setIconImage(iconoApp);
 		
-		// Tamaño por defecto, basado en los valores estáticos de esta misma clase
+		// Tamaï¿½o por defecto, basado en los valores estï¿½ticos de esta misma clase
 		setDimensionesBasicas();
 		
 		// Una posibilidad es iniciar el JFrame en un estado determinado, las opciones son:
@@ -60,34 +61,39 @@ public class VentanaPrincipal extends JFrame {
 		// JFrame.MAXIMIZED_BOTH: Inicializa el JFrame en estado Maximizado en ambos sentidos		
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		// Configuración del evento de cerrado
-		// Para más información debes estudiar Javadoc WindowListener y WindowAdapter
+		// Configuraciï¿½n del evento de cerrado
+		// Para mï¿½s informaciï¿½n debes estudiar Javadoc WindowListener y WindowAdapter
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				String posiblesRespuestas[] = {"Sí","No"};
-				// En esta opción se utiliza un showOptionDialog en el que personalizo el icono mostrado
-				int opcionElegida = JOptionPane.showOptionDialog(null, "¿Realmente desea cerrar la aplicación?", TITULO_APLICACION, 
+				String posiblesRespuestas[] = {"Sï¿½","No"};
+				// En esta opciï¿½n se utiliza un showOptionDialog en el que personalizo el icono mostrado
+				int opcionElegida = JOptionPane.showOptionDialog(null, "ï¿½Realmente desea cerrar la aplicaciï¿½n?", TITULO_APLICACION, 
 				        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, cacheImagenes.getIcono("confirm.png"), posiblesRespuestas, posiblesRespuestas[1]);
 			    if(opcionElegida == 0) {
 			      System.exit(0);          
 			    }
 			}
 		});
+		
+		
+		
+		
 
-		// Inclusión de los eventos de teclado
-		// Para más información debes estudiar Javadoc KeyListener y KeyAdapter
+		// Inclusiï¿½n de los eventos de teclado
+		// Para mï¿½s informaciï¿½n debes estudiar Javadoc KeyListener y KeyAdapter
 		this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-				// En esta ocasión he decidido no personalizar el icono mostrado, para obtener el icono por defecto
+				// En esta ocasiï¿½n he decidido no personalizar el icono mostrado, para obtener el icono por defecto
 				JOptionPane.showMessageDialog(null, "Deja de pulsar teclas ya", TITULO_APLICACION, JOptionPane.INFORMATION_MESSAGE, null);
 			}
 		});
 
-		// incluimos y estudiamos los eventos del ratón
+		// incluimos y estudiamos los eventos del ratï¿½n
 		inclusionEventosRaton();
 		
-		// Construcción elementos básicos sobre el ContentPanel
+		// Construcciï¿½n elementos bï¿½sicos sobre el ContentPanel
 		this.setContentPane(getElementosBasicosPanel());
 	}
 
@@ -109,63 +115,63 @@ public class VentanaPrincipal extends JFrame {
 	 * 
 	 */
 	private void inclusionEventosRaton () {
-		// MouseListener permite controlar eventos de ratón simples
+		// MouseListener permite controlar eventos de ratï¿½n simples
 		this.addMouseListener(new MouseListener () {
 
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Botón de ratón pulsado: " + e.getButton() + " - " + e.getClickCount() + " veces");
+				System.out.println("Botï¿½n de ratï¿½n pulsado: " + e.getButton() + " - " + e.getClickCount() + " veces");
 				System.out.println("\tX: " + e.getX() + " Y: " + e.getY() + " X en pantalla: " + e.getXOnScreen() + " Y en pantalla: " + e.getYOnScreen());
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
-				System.out.println("Botón de ratón presionado: " + e.getButton());
+				System.out.println("Botï¿½n de ratï¿½n presionado: " + e.getButton());
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				System.out.println("Botón de ratón liberado: " + e.getButton());
+				System.out.println("Botï¿½n de ratï¿½n liberado: " + e.getButton());
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				System.out.println("Ratón entra en la ventana");
+				System.out.println("Ratï¿½n entra en la ventana");
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
-				System.out.println("Ratón sale de la ventana");
+				System.out.println("Ratï¿½n sale de la ventana");
 			}
 			
 		});
 	
 		
-		// Los eventos del MouseMotionListener nos permiten detectar movimiento del ratón y arrastre, a bajo nivel 
+		// Los eventos del MouseMotionListener nos permiten detectar movimiento del ratï¿½n y arrastre, a bajo nivel 
 		this.addMouseMotionListener(new MouseMotionListener() {
 			
 			@Override
 			public void mouseMoved(MouseEvent e) {
-				System.out.println("Ratón se ha desplazado a las coordenadas x: " + e.getX() + " y: " + e.getY());
+				System.out.println("Ratï¿½n se ha desplazado a las coordenadas x: " + e.getX() + " y: " + e.getY());
 			}
 			
 			@Override
 			public void mouseDragged(MouseEvent e) {
-				System.out.println("Ratón arrastrando a las coordenadas x: " + e.getX() + " y: " + e.getY());
+				System.out.println("Ratï¿½n arrastrando a las coordenadas x: " + e.getX() + " y: " + e.getY());
 			}
 		});
 	
 		
-		// Por último, algo muy habitual
+		// Por ï¿½ltimo, algo muy habitual
 		this.addMouseWheelListener(new MouseWheelListener() {
 			
 			@Override
 			public void mouseWheelMoved(MouseWheelEvent e) {
 				if (e.getWheelRotation() > 0) {
-					System.out.println("Movimiento de reducción - Rueda hacía atrás - Pasos: " + e.getWheelRotation());
+					System.out.println("Movimiento de reducciï¿½n - Rueda hacï¿½a atrï¿½s - Pasos: " + e.getWheelRotation());
 				}
 				else {
-					System.out.println("Movimiento de amplitud - Rueda hacía adelante - Pasos: " + e.getWheelRotation());
+					System.out.println("Movimiento de amplitud - Rueda hacï¿½a adelante - Pasos: " + e.getWheelRotation());
 				}
 			}
 		});
@@ -192,29 +198,29 @@ public class VentanaPrincipal extends JFrame {
 		muestrario.add(tf);
 		
 		// JButton
-		JButton bt = new JButton("Acción!!!");
+		JButton bt = new JButton("Acciï¿½n!!!");
 		bt.addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mouseEntered(e);
-				System.out.println("Entrado en el botón");
+				System.out.println("Entrado en el botï¿½n");
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mouseExited(e);
-				System.out.println("Saliendo en el botón");
+				System.out.println("Saliendo en el botï¿½n");
 			}
 			
 		});
 		bt.addActionListener(new ActionListener () {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// Personalización del icono, otra vez
-				JOptionPane.showMessageDialog(null, "Acción!!!!!!!", TITULO_APLICACION, JOptionPane.INFORMATION_MESSAGE, cacheImagenes.getIcono("goku.png"));
+				// Personalizaciï¿½n del icono, otra vez
+				JOptionPane.showMessageDialog(null, "Acciï¿½n!!!!!!!", TITULO_APLICACION, JOptionPane.INFORMATION_MESSAGE, cacheImagenes.getIcono("goku.png"));
 			}
 		});
 		muestrario.add(bt);

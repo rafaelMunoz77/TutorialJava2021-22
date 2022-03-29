@@ -23,7 +23,7 @@ public class EjemploString {
 		
 		// Ejemplo de separación de cadena en cadenas a través de split()
 		System.out.println("Separación de una cadena en otras cadenas a través de un espacio en blanco");
-		String[] palabras = str.split(" ");
+		String[] palabras = str.split("[ ]{1,}");
 		for (int i = 0; i < palabras.length; i++) {
 			System.out.println("Palabra " + (i + 1) + ": " + palabras[i]);
 		}
