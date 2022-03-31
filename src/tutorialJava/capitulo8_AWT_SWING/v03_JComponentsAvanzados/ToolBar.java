@@ -22,11 +22,11 @@ public class ToolBar extends JToolBar {
         this.add(creaBoton("", "conectado.png", "Conectado con el servidor"));
         this.add(creaBoton("", "desconectado.png", "Desconectado del servidor"));
         this.addSeparator();
-        this.add(creaComboBox(new String[] {"Opción 1", "Opción 2", "Opción 3", "Opción 4", "Opción 5"}));
+        this.add(creaComboBox(new String[] {"OpciÃ³n 1", "OpciÃ³n 2", "OpciÃ³n 3", "OpciÃ³n 4", "OpciÃ³n 5"}));
         this.add(creaBoton("", "gotostart.png", "Primero"));
         this.add(creaBoton("", "previous.png", "Anterior"));
         this.add(creaBoton("", "next.png", "Siguiente"));
-        this.add(creaBoton("", "gotoend.png", "Último"));
+        this.add(creaBoton("", "gotoend.png", "Ãºltimo"));
         this.addSeparator();
         this.add(creaToggleBoton("", "ruedadentada.png", "Ver opciones"));
 	}
@@ -47,7 +47,7 @@ public class ToolBar extends JToolBar {
         jbt.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            	System.out.println("Has hecho clic en el botón: \"" + toolTip + "\"");
+            	System.out.println("Has hecho clic en el botÃ³n: \"" + toolTip + "\"");
             }
         });
         
@@ -75,7 +75,7 @@ public class ToolBar extends JToolBar {
         jbt.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            	System.out.println("Has hecho clic en el toggle botón: \"" + toolTip + "\" - Ahora está seleccionado: " + jbt.isSelected());
+            	System.out.println("Has hecho clic en el toggle botÃ³n: \"" + toolTip + "\" - Ahora estÃ¡ seleccionado: " + jbt.isSelected());
             }
         });
         

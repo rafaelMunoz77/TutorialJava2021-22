@@ -36,14 +36,14 @@ public class PanelJColorChooser extends JPanel {
 		constraints.weightx = 1;
 		this.add(jtfColor, constraints);
 		
-		// Incluyo el botÛn que abrir· el dialogo del JFileChooser
+		// Incluyo el bot√≥n que abrir√° el dialogo del JFileChooser
 		constraints.gridx = 1;
 		constraints.gridy = 0;
 		constraints.fill = GridBagConstraints.HORIZONTAL;
 		constraints.weightx = 0.25;
 		this.add(jbtSeleccionar, constraints);
 		
-		// Incluyo el ·rea de texto que mostrar· el fichero
+		// Incluyo el √°rea de texto que mostrar√° el fichero
 		constraints.gridx = 0;
 		constraints.gridy = 1;
 		constraints.gridwidth = 2;
@@ -51,7 +51,7 @@ public class PanelJColorChooser extends JPanel {
 		constraints.weighty = 1;
 		this.add(this.jpPanelParaColorear, constraints);
 
-		// Funcionalidad al botÛn
+		// Funcionalidad al bot√≥n
 		jbtSeleccionar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,7 +66,7 @@ public class PanelJColorChooser extends JPanel {
 	 */
 	private void seleccionaColor () {
 		Color color = jColorChooser.showDialog(null, "Seleccione un Color", Color.gray);
-		// Si el usuario pulsa sobre aceptar, el color elegido no ser· nulo
+		// Si el usuario pulsa sobre aceptar, el color elegido no ser√° nulo
 		if (color != null) {
 			String strColor = "#"+Integer.toHexString(color.getRGB()).substring(2);
 			this.jtfColor.setText(strColor);

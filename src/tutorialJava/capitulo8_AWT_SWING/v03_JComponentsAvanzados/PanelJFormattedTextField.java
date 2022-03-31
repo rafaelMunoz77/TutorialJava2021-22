@@ -27,29 +27,29 @@ public class PanelJFormattedTextField extends JPanel {
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.insets = new Insets(5, 5, 5, 5);
 
-		// Inserto el formattedtextfield para números enteros
+		// Inserto el formattedtextfield para nÃºmeros enteros
 		constraints.gridx = 0;
 		constraints.gridy = 0;
 		constraints.weighty = 1;
 		constraints.anchor = GridBagConstraints.SOUTHEAST;
-		this.add(new JLabel("JFormattedTextField para números enteros - Por defecto"), constraints);
+		this.add(new JLabel("JFormattedTextField para nï¿½meros enteros - Por defecto"), constraints);
 
 		constraints.gridx = 1;
 		constraints.anchor = GridBagConstraints.SOUTHWEST;
 		this.add(getJFormattedTextFieldInteger(), constraints);
 
-		// Inserto el formattedtextfield para números flotantes
+		// Inserto el formattedtextfield para nÃºmeros flotantes
 		constraints.gridx = 0;
 		constraints.gridy = 1;
 		constraints.weighty = 0;
 		constraints.anchor = GridBagConstraints.SOUTHEAST;
-		this.add(new JLabel("JFormattedTextField para números flotantes - Por defecto"), constraints);
+		this.add(new JLabel("JFormattedTextField para nï¿½meros flotantes - Por defecto"), constraints);
 
 		constraints.gridx = 1;
 		constraints.anchor = GridBagConstraints.SOUTHWEST;
 		this.add(getJFormattedTextFieldFloat(), constraints);
 
-		// Inserto el formattedtextfield para números flotantes
+		// Inserto el formattedtextfield para nÃºmeros flotantes
 		constraints.gridx = 0;
 		constraints.gridy = 2;
 		constraints.anchor = GridBagConstraints.SOUTHEAST;
@@ -69,7 +69,7 @@ public class PanelJFormattedTextField extends JPanel {
 		constraints.anchor = GridBagConstraints.SOUTHWEST;
 		this.add(getJFormattedTextFieldDatePersonalizado(), constraints);
 
-		// Inserto el formattedtextfield para números flotantes personalizados
+		// Inserto el formattedtextfield para nÃºmeros flotantes personalizados
 		constraints.gridx = 0;
 		constraints.gridy = 4;
 		constraints.weighty = 1;
@@ -149,7 +149,7 @@ public class PanelJFormattedTextField extends JPanel {
 	private JFormattedTextField getJFormattedTextFieldFloatPersonalizado() {
 		try {
 			MaskFormatter mascara = new MaskFormatter("##.##");
-			// Para aprender más sobre formatos de números puedes mirar la javadoc de la
+			// Para aprender mï¿½s sobre formatos de nÃºmeros puedes mirar la javadoc de la
 			// clase DecimalFormat
 			// https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
 			JFormattedTextField jftf = new JFormattedTextField(mascara);

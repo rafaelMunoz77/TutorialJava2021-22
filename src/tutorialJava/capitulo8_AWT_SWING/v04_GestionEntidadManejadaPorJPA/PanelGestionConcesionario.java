@@ -234,9 +234,9 @@ public class PanelGestionConcesionario extends JPanel {
 	 * @return
 	 */
 	private Concesionario eliminar () {
-		String respuestas[] = new String[] {"Sí", "No"};
+		String respuestas[] = new String[] {"SÃ­", "No"};
 		int opcionElegida = JOptionPane.showOptionDialog(null, 
-				"¿Realmente desea eliminar el registro?", "Eliminación del registro", 
+				"Â¿Realmente desea eliminar el registro?", "EliminaciÃ³n del registro", 
 		        JOptionPane.OK_CANCEL_OPTION, 
 		        JOptionPane.OK_CANCEL_OPTION, 
 		        CacheImagenes.getCacheImagenes().getIcono("confirm.png"), 
@@ -248,7 +248,7 @@ public class PanelGestionConcesionario extends JPanel {
 	    		nuevoAMostrar = ConcesionarioControlador.getControlador().findNext(actual);
 	    	}
 	    	ConcesionarioControlador.getControlador().remove(actual);
-			JOptionPane.showMessageDialog(this, "Eliminación correcta");
+			JOptionPane.showMessageDialog(this, "EliminaciÃ³n correcta");
 
 	    	if (nuevoAMostrar != null) {
 	    		actual = nuevoAMostrar;

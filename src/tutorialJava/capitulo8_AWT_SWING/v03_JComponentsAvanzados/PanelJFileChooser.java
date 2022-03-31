@@ -41,14 +41,14 @@ public class PanelJFileChooser extends JPanel {
 		constraints.weightx = 1;
 		this.add(jtfNombre, constraints);
 		
-		// Incluyo el botÛn que abrir· el dialogo del JFileChooser
+		// Incluyo el bot√≥n que abrir√° el dialogo del JFileChooser
 		constraints.gridx = 1;
 		constraints.gridy = 0;
 		constraints.fill = GridBagConstraints.HORIZONTAL;
 		constraints.weightx = 0.25;
 		this.add(jbtAbrir, constraints);
 		
-		// Incluyo el ·rea de texto que mostrar· el fichero
+		// Incluyo el √°rea de texto que mostrar√° el fichero
 		constraints.gridx = 0;
 		constraints.gridy = 1;
 		constraints.gridwidth = 2;
@@ -60,7 +60,7 @@ public class PanelJFileChooser extends JPanel {
 		constraints.weighty = 1;
 		this.add(jtaContenidoFichero, constraints);
 
-		// Funcionalidad al botÛn
+		// Funcionalidad al bot√≥n
 		jbtAbrir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -81,9 +81,9 @@ public class PanelJFileChooser extends JPanel {
 		// Establecimiento de la carpeta de inicio
 		this.jfileChooser.setCurrentDirectory(new File("C:\\"));
 		
-		// Tipo de selecciÛn que se hace en el di·logo
-		this.jfileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY); // SÛlo selecciona ficheros
-		//this.jfileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // SÛlo selecciona ficheros
+		// Tipo de selecci√≥n que se hace en el di√°logo
+		this.jfileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY); // S√≥lo selecciona ficheros
+		//this.jfileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // S√≥lo selecciona ficheros
 		//this.jfileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // Selecciona ficheros y carpetas
 		
 		// Filtro del tipo de ficheros que puede abrir
@@ -102,7 +102,7 @@ public class PanelJFileChooser extends JPanel {
 			}
 		});
 		
-		// Abro el di·logo para la elecciÛn del usuario
+		// Abro el di√°logo para la elecci√≥n del usuario
 		int seleccionUsuario = jfileChooser.showOpenDialog(null);
 		
 		if (seleccionUsuario == JFileChooser.APPROVE_OPTION) {
@@ -119,7 +119,7 @@ public class PanelJFileChooser extends JPanel {
 					StringBuffer sb = new StringBuffer();
 					String lineaDelFichero;
 			
-					// Lectura del fichero lÌnea a lÌnea
+					// Lectura del fichero l√≠nea a l√≠nea
 					while ((lineaDelFichero = bufferedReader.readLine()) != null) {
 						sb.append(lineaDelFichero + "\n");
 					}

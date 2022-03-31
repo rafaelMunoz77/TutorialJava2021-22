@@ -24,7 +24,7 @@ public class PanelJSpinner extends JPanel {
 	public PanelJSpinner() {
 		super();
 
-		// Personalizo los valores mostrados en los dos elmentos
+		// Personalizo los valores mostrados en los dos elementos
 		this.spinner.setValue(VALOR_INICIAL);
 		Dimension dimension = new Dimension(100, 20);
 		this.spinner.setMinimumSize(dimension);

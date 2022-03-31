@@ -28,12 +28,12 @@ public class PanelPopUpMenu extends JPanel {
 		constraints.gridy = 0;
 		constraints.anchor = GridBagConstraints.CENTER;
 		
-		this.add(new JLabel ("Haz clic con el botón secundario del ratón en cualquier parte de este panel"), constraints);
+		this.add(new JLabel ("Haz clic con el botÃ³n secundario del ratÃ³n en cualquier parte de este panel"), constraints);
 		
-		// Inicializo el menú de popup
+		// Inicializo el menÃº de popup
 		JPopupMenu popup = getPopUpMenu();
 		
-		// Evento para mostrar el menú en las coordenadas que correspondan
+		// Evento para mostrar el menï¿½ en las coordenadas que correspondan
 		this.addMouseListener(new MouseAdapter() {
  
             @Override
@@ -47,7 +47,7 @@ public class PanelPopUpMenu extends JPanel {
             }
  
             /**
-             * Método llamado cuando se detecta el evento de ratón, mostrará el menú
+             * Mï¿½todo llamado cuando se detecta el evento de ratï¿½n, mostrarï¿½ el menï¿½
              * @param e
              */
             private void showPopup(MouseEvent e) {
@@ -67,11 +67,11 @@ public class PanelPopUpMenu extends JPanel {
 	private JPopupMenu getPopUpMenu () {
 		JPopupMenu menu = new JPopupMenu();
 		
-		menu.add(crearNuevoMenuItem("Primera opción", "ruedadentada.png"));
+		menu.add(crearNuevoMenuItem("Primera opciÃ³n", "ruedadentada.png"));
 		menu.addSeparator();
-		menu.add(crearNuevoMenuItem("Segunda opción", "next.png"));
-		menu.add(crearNuevoMenuItem("Tercera opción", "previous.png"));
-		menu.add(crearNuevoMenuItem("Cuarta opción", "gotoend.png"));
+		menu.add(crearNuevoMenuItem("Segunda opciÃ³n", "next.png"));
+		menu.add(crearNuevoMenuItem("Tercera opciÃ³n", "previous.png"));
+		menu.add(crearNuevoMenuItem("Cuarta opciÃ³n", "gotoend.png"));
 		
 		return menu;
 	}
@@ -79,7 +79,7 @@ public class PanelPopUpMenu extends JPanel {
 	
 	
 	/**
-	 * Menú Item para salir de la aplicación
+	 * MenÃº Item para salir de la aplicaciÃ³n
 	 * @return
 	 */
 	private JMenuItem crearNuevoMenuItem (String titulo, String nombreIcono) {

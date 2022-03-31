@@ -43,42 +43,42 @@ public class PanelJTextPane extends JPanel {
 		JTextPane text = new JTextPane(); // Incializamos el textPane
 
 		/*
-		 * Instanciamos una clase SimpleAttributeSet, que guardará los atributos para un
+		 * Instanciamos una clase SimpleAttributeSet, que guardarï¿½ los atributos para un
 		 * determinado texto: si es negrita, cursiva, fuente, etc.
 		 */
 		SimpleAttributeSet attrs = new SimpleAttributeSet();
 
-		// Texto en negrita + nueva línea
+		// Texto en negrita + nueva lÃ­nea
 		textoNegrita(attrs, text, "Esto es un texto en negrita");
 		nuevaLinea(text);
 
-		// Texto en rojo + nueva línea
+		// Texto en rojo + nueva lÃ­nea
 		textoRojo(attrs, text, "esto es un texto de color rojo");
 		nuevaLinea(text);
 
 		/*INSERTAR UN ICONO *************************************************************************
-		El método para ello es insertIcon(). Este método reemplaza lo que hay seleccioado en el 
-		JTextPane por el icono. Si sólo queremos insertarlo al final, debemos cambiar la selección 
-		del texto al final, sin seleccionar nada. Eso se hace con el método setCaretPosition().
-		Después generamos el icono desde la imagen y lo añadimos con insertIcon
+		El mÃ©todo para ello es insertIcon(). Este mÃ©todo reemplaza lo que hay seleccioado en el 
+		JTextPane por el icono. Si sÃ³lo queremos insertarlo al final, debemos cambiar la selecciÃ³n 
+		del texto al final, sin seleccionar nada. Eso se hace con el mï¿½todo setCaretPosition().
+		DespuÃ©s generamos el icono desde la imagen y lo aÃ±adimos con insertIcon
 		*/
 		text.setCaretPosition(text.getStyledDocument().getLength());
 		text.insertIcon(CacheImagenes.getCacheImagenes().getIcono("ruedadentada.png"));
 		nuevaLinea(text);
 
 		/*
-		 * INSERTAR UN BOTÓN
+		 * INSERTAR UN BOTï¿½N
 		 * ************************************************************************* El
-		 * método es insertComponent() y, al igual que en el caso anterior, reemplaza el
+		 * mï¿½todo es insertComponent() y, al igual que en el caso anterior, reemplaza el
 		 * texto que haya seleccionado por el Component. Al igual que antes, con
 		 * setCaretPosition() nos vamos al final del texto e insertamos el JButton.
 		 */
 		text.setCaretPosition(text.getStyledDocument().getLength());
-		JButton boton = new JButton("Pulsame");
+		JButton boton = new JButton("PÃºlsame");
 		boton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Se ha hecho clic en el botón del TextPane");
+				System.out.println("Se ha hecho clic en el botÃ³n del TextPane");
 			}
 		});
 		text.insertComponent(boton);
@@ -98,7 +98,7 @@ public class PanelJTextPane extends JPanel {
 
 		/*
 		 * Para modificar el valor de estos atributos, nos ayuda la clase
-		 * StyleConstants. Esta clase tiene muchos métodos para cambiar valores a una
+		 * StyleConstants. Esta clase tiene muchos mÃ©todos para cambiar valores a una
 		 * clase SimpleAttributeSet. En este caso concreto hemos usado setBold() para
 		 * ponerlo en negrita.
 		 */
@@ -106,11 +106,11 @@ public class PanelJTextPane extends JPanel {
 
 		/*
 		 * Obtenemos el StyledDocument, que es lo que el JTextPane tiene dentro y
-		 * representa al texto que estamos viendo. El StyledDocument tiene un método
-		 * insert() que admite tres parámetros: - Posición en la que se quiere insetar
+		 * representa al texto que estamos viendo. El StyledDocument tiene un mï¿½todo
+		 * insert() que admite tres parÃ¡metros: - PosiciÃ³n en la que se quiere insetar
 		 * el texto dentro del documento. - El texto - Los atributos del texto. Como
-		 * queremos insertar al final, la posición es justo la longitud del texto, esto
-		 * se obtiene con el método getLength().
+		 * queremos insertar al final, la posiciï¿½n es justo la longitud del texto, esto
+		 * se obtiene con el mï¿½todo getLength().
 		 */
 		try {
 			text.getStyledDocument().insertString(text.getStyledDocument().getLength(), string, attrs);

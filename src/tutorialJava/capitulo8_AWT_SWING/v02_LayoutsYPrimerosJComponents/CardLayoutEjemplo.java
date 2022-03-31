@@ -43,7 +43,7 @@ public class CardLayoutEjemplo extends JPanel {
         pnlSup = new JPanel();
         pnlSup.setBorder(BorderFactory.createTitledBorder("Ejemplo de CardLayout"));
         pnlSup.setLayout(new FlowLayout());
-        pnlSup.add(JLabelFactory.instance("Elegir Opción"));
+        pnlSup.add(JLabelFactory.instance("Elegir Opciï¿½n"));
         jcb = JComboBoxFactory.instance(new String[] {"Panel 1", "Panel 2", "Panel 3"});
         jcb.addActionListener(new ActionListener () {
 			@Override
@@ -100,7 +100,7 @@ public class CardLayoutEjemplo extends JPanel {
     public void construyePanelInf3(){
         pnlInfOpcion3 = new JPanel(new FlowLayout());
         pnlInfOpcion3.setBackground(Color.green);
-        pnlInfOpcion3.add(JLabelFactory.instance("Increíble!!!!. Has Seleccionado el Panel 3."));
+        pnlInfOpcion3.add(JLabelFactory.instance("IncreÃ­ble!!!!. Has Seleccionado el Panel 3."));
     }
     
     

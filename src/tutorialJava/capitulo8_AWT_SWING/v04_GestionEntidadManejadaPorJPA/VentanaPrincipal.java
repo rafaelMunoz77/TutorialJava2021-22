@@ -14,12 +14,12 @@ public class VentanaPrincipal extends JFrame {
 
 	public static int ANCHO = 800;
 	public static int ALTO = 600;
-	public static String TITULO_APLICACION = "Gestión de venta de coches";
+	public static String TITULO_APLICACION = "GestiÃ³n de venta de coches";
 
 	private CacheImagenes cacheImagenes;
 	public static BufferedImage iconoApp;
 
-	// Establecer la apariencia típica de Windows
+	// Establecer la apariencia tï¿½pica de Windows
 	static {
 		Apariencia.setAparienciasOrdenadas(Apariencia.aparienciasOrdenadas);
 	}
@@ -38,7 +38,7 @@ public class VentanaPrincipal extends JFrame {
 		
 		agregarGestionCierreAplicacion();
 		
-		// Construcción elementos básicos sobre el ContentPanel
+		// ConstrucciÃ³n elementos bÃ¡sicos sobre el ContentPanel
 		this.setContentPane(new JTabbedPaneGestion());
 	}
 
@@ -48,14 +48,14 @@ public class VentanaPrincipal extends JFrame {
 	 * 
 	 */
 	private void agregarGestionCierreAplicacion () {
-		// Configuración del evento de cerrado
-		// Para más información debes estudiar Javadoc WindowListener y WindowAdapter
+		// ConfiguraciÃ³n del evento de cerrado
+		// Para mÃ¡s informaciÃ³n debes estudiar Javadoc WindowListener y WindowAdapter
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		this.addWindowListener (new WindowAdapter() {
 			public void windowClosing (WindowEvent e) {
-				String posiblesRespuestas[] = {"Sí","No"};
-				// En esta opción se utiliza un showOptionDialog en el que personalizo el icono mostrado
-				int opcionElegida = JOptionPane.showOptionDialog(null, "¿Realmente desea cerrar la aplicación?", TITULO_APLICACION, 
+				String posiblesRespuestas[] = {"Sï¿½","No"};
+				// En esta opciï¿½n se utiliza un showOptionDialog en el que personalizo el icono mostrado
+				int opcionElegida = JOptionPane.showOptionDialog(null, "Â¿Realmente desea cerrar la aplicaciÃ³n?", TITULO_APLICACION, 
 				        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, cacheImagenes.getIcono("confirm.png"), posiblesRespuestas, posiblesRespuestas[1]);
 			    if(opcionElegida == 0) {
 			      System.exit(0);          

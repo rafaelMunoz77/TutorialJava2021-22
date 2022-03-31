@@ -1,4 +1,4 @@
-package tutorialJava.capitulo8_AWT_SWING.ejercicios.ejercicio01_CRUD_Fabricante;
+package tutorialJava.capitulo8_AWT_SWING.ejemplos.ejemplo01_CRUD_Fabricante;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
