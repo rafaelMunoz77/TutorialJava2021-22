@@ -40,19 +40,10 @@ public class PanelConComboBoxDeFabricante extends JPanel {
 		gbc_comboBox.gridy = 0;
 		add(comboBox, gbc_comboBox);
 		
+		
 		JButton btnNewButton = new JButton("Cargar valores");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				List<Fabricante> lista = ControladorFabricante.obtenerTodosLosFabricantes();
-				for (int i = 0; i < lista.size(); i++) {
-					comboBox.addItem(lista.get(i));
-				}
-				// Quiero seleccionar el fabricante con id = 3;
-				for (int i = 0; i < comboBox.getItemCount(); i++) {
-					if (comboBox.getItemAt(i).getId() == 3) {
-						comboBox.setSelectedIndex(i);
-					}
-				}
 			}
 		});
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
@@ -67,9 +58,39 @@ public class PanelConComboBoxDeFabricante extends JPanel {
 		gbc_btnNewButton_1.gridy = 1;
 		add(btnNewButton_1, gbc_btnNewButton_1);
 
+		
+		cargarValoresFabricantesEnJComboBox();
+	}
+	
+	/**
+	 * 
+	 */
+	private void cargarValoresFabricantesEnJComboBox () {
+		// Cargamos valores dentro del combobox
+		List<Fabricante> lista = ControladorFabricante.obtenerTodosLosFabricantes();
+		for (int i = 0; i < lista.size(); i++) {
+			comboBox.addItem(lista.get(i));
+		}
+
+	}
+
+	/**
+	 * 
+	 * @param idFabricante
+	 */
+	private void seleccionarFabricanteEnJComboBox (int idFabricante) {
+		for (int i = 0; i < comboBox.getItemCount(); i++) {
+			if ( ((Fabricante) comboBox.getItemAt(i)).getId() == idFabricante) {
+				comboBox.setSelectedIndex(i);
+			}
+		}
+	}
+	
+	
+	private int getIdFabricanteSeleccionadoEnJComboBox () {
+		return ((Fabricante) comboBox.getSelectedItem()).getId();
 	}
 	
 	
 	
-
 }
