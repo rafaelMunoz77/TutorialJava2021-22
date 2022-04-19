@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import tutorialJava.capitulo8_AWT_SWING.utils.Apariencia;
+import tutorialJava.capitulo8_AWT_SWING.v03_JComponentsAvanzados.JPanelIntoJDialog.PanelConBoton;
 import tutorialJava.capitulo8_AWT_SWING.v03_JComponentsAvanzados.splitPaneYJSlider.SplitPanel;
 
 public class VentanaPrincipal extends JFrame {
@@ -47,6 +48,7 @@ public class VentanaPrincipal extends JFrame {
 		tabbedPane.add("JFormattedTextField", new PanelJFormattedTextField());
 		tabbedPane.add("JTextPane", new PanelJTextPane());
 		tabbedPane.add("JEditorPane", new PanelJEditorPane());
+		tabbedPane.add("JPanel into JDialog", new PanelConBoton());
 
 		return tabbedPane;
 	}

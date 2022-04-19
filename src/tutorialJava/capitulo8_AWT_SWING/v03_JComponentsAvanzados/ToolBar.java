@@ -15,7 +15,6 @@ import tutorialJava.capitulo8_AWT_SWING.utils.CacheImagenes;
 
 public class ToolBar extends JToolBar {
 
-	private static final long serialVersionUID = 1L;
 	
 	public ToolBar () {
         this.add(creaBoton("", "exit.png", "Salir del programa"));
