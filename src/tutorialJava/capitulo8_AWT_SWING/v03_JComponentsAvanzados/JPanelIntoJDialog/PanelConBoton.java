@@ -28,11 +28,11 @@ public class PanelConBoton extends JPanel {
 		btnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JDialog dialogo = new JDialog();
-				// El usuario no puede redimensionar el di�logo
+				// El usuario no puede redimensionar el diálogo
 				dialogo.setResizable(true);
-				// t�tulo del d�alogo
+				// título del díalogo
 				dialogo.setTitle("Título");
-				// Introducimos el panel creado sobre el di�logo
+				// Introducimos el panel creado sobre el diálogo
 				dialogo.setContentPane(new PanelAInsertarEnJDialog());
 				// Empaquetar el di�logo hace que todos los componentes ocupen el espacio que deben y el lugar adecuado
 				dialogo.pack();
