@@ -1,11 +1,14 @@
-package tutorialJava.capitulo8_AWT_SWING.ejercicios.ejercicio01_CRUD_Fabricante;
+package tutorialJava.capitulo8_AWT_SWING.ejercicios.ejercicio02_GestionGraficaCompletaEsquemaTutorialJavaCoches.controladores;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import tutorialJava.capitulo7_Acceso_A_Datos.ejercicios.bloque01_CRUD_Fabricante.ConnectionManager;
+import tutorialJava.capitulo8_AWT_SWING.ejercicios.ejercicio02_GestionGraficaCompletaEsquemaTutorialJavaCoches.entidades.Fabricante;
 
 public class ControladorFabricante extends SuperControlador {
 
@@ -13,29 +16,29 @@ public class ControladorFabricante extends SuperControlador {
 	/**
 	 * 
 	 */
-	public static Fabricante findPrimerFabricante () {
-		return findFabricante("select * from fabricante order by id limit 1");
+	public static Fabricante findPrimero () {
+		return find("select * from fabricante order by id limit 1");
 	}
 
 	/**
 	 * 
 	 */
-	public static Fabricante findUltimoFabricante () {
-		return findFabricante("select * from fabricante order by id desc limit 1");
+	public static Fabricante findUltimo () {
+		return find("select * from fabricante order by id desc limit 1");
 	}
 
 	/**
 	 * 
 	 */
-	public static Fabricante findAnteriorFabricante (int idActual) {
-		return findFabricante("select * from fabricante where id < " + idActual + " order by id desc limit 1");
+	public static Fabricante findAnterior (int idActual) {
+		return find("select * from fabricante where id < " + idActual + " order by id desc limit 1");
 	}
 
 	/**
 	 * 
 	 */
-	public static Fabricante findSiguienteFabricante (int idActual) {
-		return findFabricante("select * from fabricante where id > " + idActual + " order by id limit 1");
+	public static Fabricante findSiguiente (int idActual) {
+		return find("select * from fabricante where id > " + idActual + " order by id limit 1");
 	}
 
 
@@ -43,7 +46,7 @@ public class ControladorFabricante extends SuperControlador {
 	/**
 	 * 
 	 */
-	public static Fabricante findFabricante (String sql) {
+	public static Fabricante find (String sql) {
 		Fabricante f = null;
 		try {
 			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
@@ -69,17 +72,51 @@ public class ControladorFabricante extends SuperControlador {
 	}
 
 
+	
+	
+	/**
+	 * 
+	 */
+	public static List<Fabricante> findAll () {
+		List<Fabricante> lista = new ArrayList<Fabricante>();
+		try {
+			// Para poder ejecutar una consulta necesitamos utilizar un objeto de tipo Statement
+			Statement s = (Statement) ConnectionManager.getConexion().createStatement(); 
+			
+			// La ejecución de la consulta se realiza a través del objeto Statement y se recibe en forma de objeto
+			// de tipo ResultSet, que puede ser navegado para descubrir todos los registros obtenidos por la consulta
+			ResultSet rs = s.executeQuery ("Select * from fabricante");
+		   
+			// Navegación del objeto ResultSet
+			while (rs.next()) {
+				Fabricante f = new Fabricante(rs.getInt("id"), rs.getString("cif"), rs.getString("nombre"));
+				lista.add(f);
+			}
+			// Cierre de los elementos
+			rs.close();
+			s.close();
+		}
+		catch (SQLException ex) {
+			System.out.println("Error en la ejecución SQL: " + ex.getMessage());
+			ex.printStackTrace();
+		}
+		return lista;
+	}
+
+
+	
+	
 	/**
 	 * 
 	 * @param f
 	 * @return
 	 */
-	public static int guardarFabricante(Fabricante f) {
+	public static int guardar(Fabricante f) {
 		if (f.getId() == 0) {
-			return nuevoFabricante(f);
+			return nuevo(f);
 		}
 		else {
-			return modificarFabricante(f);
+			return modificar(f);
 		}
 	}
 	
@@ -87,7 +124,7 @@ public class ControladorFabricante extends SuperControlador {
 	/**
 	 * 
 	 */
-	public static int modificarFabricante (Fabricante f) {		
+	public static int modificar (Fabricante f) {		
 		int registrosAfectados = 0;
 		try {
 			Statement s = ConnectionManager.getConexion().createStatement();
@@ -105,7 +142,7 @@ public class ControladorFabricante extends SuperControlador {
 	/**
 	 * 
 	 */
-	public static int eliminarFabricante (int idEliminacion) {		
+	public static int eliminar (int idEliminacion) {		
 		int registrosAfectados = 0;
 		try {
 			Statement s = ConnectionManager.getConexion().createStatement();
@@ -122,7 +159,7 @@ public class ControladorFabricante extends SuperControlador {
 	/**
 	 * 
 	 */
-	public static int nuevoFabricante (Fabricante f) {
+	public static int nuevo (Fabricante f) {
 		int registrosAfectados = 0;
 		try {
 			Statement s = ConnectionManager.getConexion().createStatement();
