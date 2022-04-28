@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
 
-public class PanelJFileChooser extends JPanel {
+public class PanelJFileChooserFicheroTexto extends JPanel {
 
 	JTextField jtfNombre = new JTextField();
 	JButton jbtAbrir = new JButton ("Abrir fichero");
@@ -27,7 +27,7 @@ public class PanelJFileChooser extends JPanel {
 	/**
 	 * 
 	 */
-	public PanelJFileChooser() {
+	public PanelJFileChooserFicheroTexto() {
 		super();
 		
 		this.setLayout(new GridBagLayout());

@@ -39,7 +39,8 @@ public class VentanaPrincipal extends JFrame {
 	private JTabbedPane getTabbedPane() {
 		JTabbedPane tabbedPane = new JTabbedPane();
 
-		tabbedPane.add("JFileChooser", new PanelJFileChooser());
+		tabbedPane.add("JFileChooser - Fichero Texto", new PanelJFileChooserFicheroTexto());
+		tabbedPane.add("JFileChooser - Fichero Binario", new PanelJFileChooserFicheroImagen());
 		tabbedPane.add("JColorChooser", new PanelJColorChooser());
 		tabbedPane.add("JSplitPane y JSlider", new SplitPanel());
 		tabbedPane.add("JScroolPane con imagen", new JScroolPaneConImagen("dukeGrande.png"));

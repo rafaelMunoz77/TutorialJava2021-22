@@ -9,10 +9,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class PanelCRUD_Estudiante extends JPanel {
-
 	
 	PanelDatosPersonales panelDatosPersonales = new PanelDatosPersonales();
-	
 	/**
 	 * Create the panel.
 	 */
@@ -43,8 +41,12 @@ public class PanelCRUD_Estudiante extends JPanel {
 		btnNewButton_2.setIcon(new ImageIcon(PanelCRUD_Estudiante.class.getResource("/tutorialJava/capitulo8_AWT_SWING/res/guardar.png")));
 		toolBar.add(btnNewButton_2);
 		
+		
 		add(panelDatosPersonales, BorderLayout.CENTER);
 
 	}
 
+	
+	
+	
 }
