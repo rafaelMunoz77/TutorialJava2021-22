@@ -6,8 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import tutorialJava.capitulo8_AWT_SWING.utils.Apariencia;
-import tutorialJava.capitulo8_AWT_SWING.v03_JComponentsAvanzados.JPanelIntoJDialog.PanelConBoton;
-import tutorialJava.capitulo8_AWT_SWING.v03_JComponentsAvanzados.splitPaneYJSlider.SplitPanel;
+
 
 public class VentanaPrincipal extends JFrame {
 

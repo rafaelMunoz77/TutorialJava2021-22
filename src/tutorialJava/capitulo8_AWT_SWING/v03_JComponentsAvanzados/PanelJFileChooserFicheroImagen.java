@@ -34,7 +34,7 @@ public class PanelJFileChooserFicheroImagen extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public PanelJFileChooserFicheroImagen() {
+	public PanelJFileChooserFicheroImagen() { 
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0};
@@ -105,7 +105,7 @@ public class PanelJFileChooserFicheroImagen extends JPanel {
 		// Configurando el componente
 		
 		// Tipo de selección que se hace en el diálogo
-		jfileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY); // Sólo selecciona ficheros
+		jfileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); // Sólo selecciona ficheros
 
 		// Filtro del tipo de ficheros que puede abrir
 		jfileChooser.setFileFilter(new FileFilter() {

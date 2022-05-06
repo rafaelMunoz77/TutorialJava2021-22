@@ -3,7 +3,7 @@ package tutorialJava.capitulo6_Recursos;
 public class EjemploString {
 
 	public static void main(String[] args) {
-		String str = "Cadena de texto de tamaño mediano"; 
+		String str = "Cadena de texto de tamaño mediano";  
 		str = new String("Cadena de texto de tamaño mediano");
 		str = new String(new char[] {'C', 'a', 'd', 'e', 'n', 'a', ' ', 'd', 'e', ' ', 't', 'e', 'x', 't', 'o'});
 		str = new String(new StringBuffer("Cadena de texto de tamaño mediano"));
