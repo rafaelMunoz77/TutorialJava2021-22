@@ -15,7 +15,7 @@ import tutorialJava.modelosBasesDeDatosComunesJPA.ventaDeCoches.Venta;
 public class Ejemplo06_JPA_conexionBasica {
 
 	
-	/**
+	/** 
 	 * 
 	 */
 	private static void obtencionUnaSolaEntidad () {
