@@ -278,7 +278,8 @@ public class VentanaPrincipal {
 	private void guardarUsuario() {
 		// Comprobación del email
 		String email = this.jtfEmail.getText();
-		if (! (email.lastIndexOf('.') != -1 && email.lastIndexOf('@') != -1 && email.lastIndexOf('.') > email.lastIndexOf('@') )) {
+		if (! (email.lastIndexOf('.') != -1 && email.lastIndexOf('@') != -1 && 
+				email.lastIndexOf('.') > email.lastIndexOf('@') )) {
 			JOptionPane.showMessageDialog(null, "El email no es válido");
 			return;
 		}
@@ -307,7 +308,6 @@ public class VentanaPrincipal {
 		if (!password.equals(this.jtfRepePassword.getText())) {
 			JOptionPane.showMessageDialog(null, "La contraseña y su repetición no coinciden");
 			return;
-
 		}
 		
 		// Compruebo que el usuario no exista antes de guardar
