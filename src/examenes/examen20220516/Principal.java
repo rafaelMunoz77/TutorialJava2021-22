@@ -172,9 +172,9 @@ public class Principal {
 		JLabel lblNewLabel_1 = new JLabel("Artista encontrado");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 14));
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
-		gbc_lblNewLabel_1.gridwidth = 2;
+		gbc_lblNewLabel_1.gridwidth = 3;
 		gbc_lblNewLabel_1.insets = new Insets(10, 0, 10, 0);
-		gbc_lblNewLabel_1.gridx = 1;
+		gbc_lblNewLabel_1.gridx = 0;
 		gbc_lblNewLabel_1.gridy = 0;
 		panel.add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
